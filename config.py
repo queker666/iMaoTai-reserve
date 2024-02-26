@@ -25,7 +25,7 @@ PUSH_TOKEN = os.environ.get("PUSHPLUS_KEY")
 *********** 地图配置 ***********
 获取地点信息,这里用的高德api,需要自己去高德开发者平台申请自己的key
 '''
-AMAP_KEY = os.environ.get("GAODE_KEY")
+AMAP_KEY = "b02b3108e476bb246a92de7b59734e9f"
 
 
 '''
@@ -34,7 +34,7 @@ AMAP_KEY = os.environ.get("GAODE_KEY")
 不配置,使用默认路径,在项目目录中;如果需要配置,你自己应该也会配置路径
 例如： CREDENTIALS_PATH = './myConfig/credentials'
 '''
-CREDENTIALS_PATH = None
+CREDENTIALS_PATH = './myConfig/credentials'
 
 
 '''
@@ -45,8 +45,8 @@ key用了SHA-256转化,所以这里可以配置任意字符串,不用遵守AES�
 如果不会配置环境变量(建议学习)、不care安全性、非开源运行,你可以在这里明文指定,eg:PRIVATE_AES_KEY = '666666'
 ps:本来是写了判断是否配置密钥，可以自由选择明文保存的方式。但是还是为了安全性，限制了必须使用AES加密。哪怕是明文密钥。
 '''
-PRIVATE_AES_KEY = os.environ.get("PRIVATE_AES_KEY")
-
+# PRIVATE_AES_KEY = os.environ.get("588E11CD-5B05-4B5B-AD10-7084C42AC167,eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtdCIsImV4cCI6MTcwNzgxNzI0NCwidXNlcklkIjoxMTExMzYzOTc5LCJkZXZpY2VJZCI6IjU4OEUxMUNELTVCMDUtNEI1Qi1BRDEwLTcwODRDNDJBQzE2NyIsImlhdCI6MTcwNTIyNTI0NH0.tQRLl7orHewkRIJ0XGYkzUYjnv3wiq2o_Y6csve-_z0")
+PRIVATE_AES_KEY ='666666'
 
 '''
 *********** 预约规则配置 ************
