@@ -51,7 +51,7 @@ jobs:
         run: |
           python main.py
 
-#        pip install flake8 pytest 1
+#        pip install flake8 pytest 11
 #        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 #    - name: Lint with flake8
 #      run: |
