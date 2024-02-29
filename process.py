@@ -321,6 +321,26 @@ def get_map(lat: str = '28.499562', lng: str = '102.182324'):
     return p_c_map, dict(r.json())
 
 
+def send_message_to_dingtalk(webhook_url, message):  
+    headers = {'Content-Type': 'application/json;charset=utf-8'}  
+    data = {  
+        "msgtype": "text",  
+        "text": {  
+            "content": message  
+        }  
+    }  
+  
+    response = requests.post(webhook_url, headers=headers, data=json.dumps(data))  
+    if response.status_code == 200:  
+        print("消息发送成功!")  
+    else:  
+        print(f"消息发送失败，状态码: {response.status_code}")  
+  
+if __name__ == "__main__":  
+    webhook_url = "你的钉钉机器人Webhook地址"  # 请替换为你的钉钉机器人Webhook地址  
+    message = "你要发送的消息的内容"  # 替换为你想要发送的消息内容  
+    send_message_to_dingtalk(webhook_url, message)
+
 # 领取耐力和小茅运
 def getUserEnergyAward(mobile: str):
     """
