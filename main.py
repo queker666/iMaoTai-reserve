@@ -82,5 +82,4 @@ for section in configs.sections():
         logging.error(e)
 
 # 推送消息
-process.send_message_to_dingtalk('https://oapi.dingtalk.com/robot/send?access_token=e839653c4a21bc201e6fed4a2791b242ddd61a63ad53a333dd06cc752b1e0451', s_content)
 process.send_msg(s_title, s_content)
