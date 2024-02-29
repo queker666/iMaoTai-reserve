@@ -6,6 +6,8 @@ import config
 import login
 import process
 import privateCrypt
+import requests
+import json
 
 DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"
 TODAY = datetime.date.today().strftime("%Y%m%d")
@@ -82,4 +84,12 @@ for section in configs.sections():
         logging.error(e)
 
 # 推送消息
+message = {
+    "msgtype": "text",
+    "text": {
+        "content": s_content
+    }
+}
+# 发送POST请求
+response = requests.post("https://oapi.dingtalk.com/robot/send?access_token=03f9d8311406d196afe73e2c72919a37c1ee9c38f5be326d58a594e1dac1967a", headers={'Content-Type': 'application/json;charset=utf-8'}, data=json.dumps(message))
 process.send_msg(s_title, s_content)
